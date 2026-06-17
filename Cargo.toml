@@ -1,0 +1,12 @@
+[package]
+name = "udp"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = 'server'
+path = 'client/main.rs'
+
+[[bin]]
+name = 'server'
+path = 'server/main.rs'

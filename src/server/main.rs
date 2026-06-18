@@ -11,7 +11,7 @@ impl Server {
         }
     }
 
-    fn send(&self) -> std::io::Result<()> {
+    fn receive(&self) -> std::io::Result<()> {
         let socket = UdpSocket::bind(&self.address).expect("Could not create udp socket.");
         loop {
             let mut buf = [0; 10];
@@ -23,6 +23,6 @@ impl Server {
 }
 
 fn main() {
-    let server = Server::new("127.0.0.1:34254");
-    server.send().expect("Issue sending.");
+    let server = Server::new("0.0.0.0:8080");
+    server.receive().expect("Issue receiving.");
 }
